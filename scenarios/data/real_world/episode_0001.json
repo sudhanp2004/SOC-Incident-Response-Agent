@@ -1,0 +1,191 @@
+{
+  "alerts": [
+    {
+      "alert_id": "ALT-RW-0000",
+      "timestamp": "2024-03-15T09:28:00Z",
+      "severity": "high",
+      "rule_name": "ConsoleLogin",
+      "description": "Auto-converted from real log data: ConsoleLogin",
+      "host_id": "HOST-198-51-100-77",
+      "user_id": "svc_finance",
+      "mitre_tactic": "credential_access",
+      "mitre_technique": null,
+      "indicators": [
+        {
+          "type": "user",
+          "value": "svc_finance",
+          "reputation": "malicious",
+          "context": null
+        },
+        {
+          "type": "ip",
+          "value": "198.51.100.77",
+          "reputation": "malicious",
+          "context": null
+        }
+      ],
+      "raw_log": "{\"eventTime\":\"2024-03-15T09:28:00Z\",\"eventName\":\"ConsoleLogin\",\"userIdentity\":{\"userName\":\"svc_finance\"},\"sourceIPAddress\":\"198.51.100.77\"}",
+      "status": "pending",
+      "enrichment": null,
+      "ground_truth": true
+    },
+    {
+      "alert_id": "ALT-RW-0001",
+      "timestamp": "2024-03-15T09:30:00Z",
+      "severity": "low",
+      "rule_name": "DescribeInstances",
+      "description": "Auto-converted from real log data: DescribeInstances",
+      "host_id": "HOST-10-0-1-20",
+      "user_id": "alee",
+      "mitre_tactic": null,
+      "mitre_technique": null,
+      "indicators": [
+        {
+          "type": "user",
+          "value": "alee",
+          "reputation": "unknown",
+          "context": null
+        },
+        {
+          "type": "ip",
+          "value": "10.0.1.20",
+          "reputation": "unknown",
+          "context": null
+        }
+      ],
+      "raw_log": "{\"eventTime\":\"2024-03-15T09:30:00Z\",\"eventName\":\"DescribeInstances\",\"userIdentity\":{\"userName\":\"alee\"},\"sourceIPAddress\":\"10.0.1.20\"}",
+      "status": "pending",
+      "enrichment": null,
+      "ground_truth": false
+    },
+    {
+      "alert_id": "ALT-RW-0002",
+      "timestamp": "2024-03-15T09:47:00Z",
+      "severity": "high",
+      "rule_name": "dns_query",
+      "description": "Auto-converted from real log data: dns_query",
+      "host_id": "HOST-10-0-1-11",
+      "user_id": null,
+      "mitre_tactic": "exfiltration",
+      "mitre_technique": null,
+      "indicators": [
+        {
+          "type": "domain",
+          "value": "file-share-quick.net",
+          "reputation": "malicious",
+          "context": null
+        },
+        {
+          "type": "ip",
+          "value": "198.51.100.77",
+          "reputation": "malicious",
+          "context": null
+        }
+      ],
+      "raw_log": "{\"_time\":\"2024-03-15T09:47:00Z\",\"src\":\"10.0.1.11\",\"query\":\"file-share-quick.net\",\"query_type\":\"A\",\"answer\":\"198.51.100.77\"}",
+      "status": "pending",
+      "enrichment": null,
+      "ground_truth": true
+    },
+    {
+      "alert_id": "ALT-RW-0003",
+      "timestamp": "2024-03-15T09:48:00Z",
+      "severity": "low",
+      "rule_name": "dns_query",
+      "description": "Auto-converted from real log data: dns_query",
+      "host_id": "HOST-10-0-1-12",
+      "user_id": null,
+      "mitre_tactic": null,
+      "mitre_technique": null,
+      "indicators": [
+        {
+          "type": "domain",
+          "value": "microsoft.com",
+          "reputation": "unknown",
+          "context": null
+        },
+        {
+          "type": "ip",
+          "value": "20.1.2.3",
+          "reputation": "unknown",
+          "context": null
+        }
+      ],
+      "raw_log": "{\"_time\":\"2024-03-15T09:48:00Z\",\"src\":\"10.0.1.12\",\"query\":\"microsoft.com\",\"query_type\":\"A\",\"answer\":\"20.1.2.3\"}",
+      "status": "pending",
+      "enrichment": null,
+      "ground_truth": false
+    }
+  ],
+  "hosts": [
+    {
+      "host_id": "HOST-10-0-1-11",
+      "hostname": "host-10-0-1-11",
+      "ip_address": "10.0.1.11",
+      "subnet": "0.0.0.0/0",
+      "os": "unknown",
+      "role": "unknown",
+      "owner": null,
+      "is_critical": false,
+      "is_vip": false,
+      "status": "suspicious",
+      "active_sessions": [],
+      "running_processes": []
+    },
+    {
+      "host_id": "HOST-10-0-1-12",
+      "hostname": "host-10-0-1-12",
+      "ip_address": "10.0.1.12",
+      "subnet": "0.0.0.0/0",
+      "os": "unknown",
+      "role": "unknown",
+      "owner": null,
+      "is_critical": false,
+      "is_vip": false,
+      "status": "clean",
+      "active_sessions": [],
+      "running_processes": []
+    },
+    {
+      "host_id": "HOST-10-0-1-20",
+      "hostname": "host-10-0-1-20",
+      "ip_address": "10.0.1.20",
+      "subnet": "0.0.0.0/0",
+      "os": "unknown",
+      "role": "unknown",
+      "owner": null,
+      "is_critical": false,
+      "is_vip": false,
+      "status": "clean",
+      "active_sessions": [],
+      "running_processes": []
+    },
+    {
+      "host_id": "HOST-198-51-100-77",
+      "hostname": "host-198-51-100-77",
+      "ip_address": "198.51.100.77",
+      "subnet": "0.0.0.0/0",
+      "os": "unknown",
+      "role": "unknown",
+      "owner": null,
+      "is_critical": false,
+      "is_vip": false,
+      "status": "suspicious",
+      "active_sessions": [],
+      "running_processes": []
+    }
+  ],
+  "attack_chain": {
+    "patient_zero_host": "HOST-198-51-100-77",
+    "stages": [
+      "credential_access",
+      "exfiltration"
+    ],
+    "lateral_movement_targets": [
+      "HOST-10-0-1-11"
+    ],
+    "crown_jewel_host": "HOST-10-0-1-12",
+    "exfiltration_complete": false,
+    "attacker_dwell_minutes": 45
+  }
+}

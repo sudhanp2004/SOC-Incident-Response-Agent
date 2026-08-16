@@ -45,6 +45,17 @@ tasks:
     max_steps: 40
     score_range: [0.0, 1.0]
 
+  - id: real_world_incident
+    name: "Real-world incident (data-driven)"
+    description: >
+      Alerts derived from real security log data (Splunk Boss of the SOC
+      dataset), auto-labeled against a curated indicator table. Correlate
+      alerts across hosts and contain the threat, same as the attack-chain
+      task but backed by real data instead of a fixed hand-written scenario.
+    difficulty: medium
+    max_steps: 25
+    score_range: [0.0, 1.0]
+
 observation_space:
   type: object
   description: >

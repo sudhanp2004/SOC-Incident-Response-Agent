@@ -43,21 +43,25 @@ class SOCEnv:
         "alert_triage",
         "attack_chain_reconstruction",
         "constrained_incident_response",
+        "real_world_incident",
     ]
     MAX_STEPS = {
         "alert_triage": 10,
         "attack_chain_reconstruction": 25,
         "constrained_incident_response": 40,
+        "real_world_incident": 25,
     }
     MAX_MINUTES = {
         "alert_triage": 30,
         "attack_chain_reconstruction": 120,
         "constrained_incident_response": 240,
+        "real_world_incident": 120,
     }
     MINUTES_PER_STEP = {
         "alert_triage": 3,
         "attack_chain_reconstruction": 5,
         "constrained_incident_response": 6,
+        "real_world_incident": 5,
     }
 
     def __init__(self, task_id: str = "alert_triage", seed: int = 42):
@@ -155,7 +159,7 @@ class SOCEnv:
         s = self._state
         if self.task_id == "alert_triage":
             return grade_task_easy(s)
-        elif self.task_id == "attack_chain_reconstruction":
+        elif self.task_id in ("attack_chain_reconstruction", "real_world_incident"):
             return grade_task_medium(s)
         else:
             return grade_task_hard(s)

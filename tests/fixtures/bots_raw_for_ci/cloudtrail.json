@@ -1,0 +1,3 @@
+{"eventTime":"2024-03-15T09:28:00Z","eventName":"ConsoleLogin","userIdentity":{"userName":"svc_finance"},"sourceIPAddress":"198.51.100.77"}
+{"eventTime":"2024-03-15T09:30:00Z","eventName":"DescribeInstances","userIdentity":{"userName":"alee"},"sourceIPAddress":"10.0.1.20"}
+{"eventTime": "missing eventName field"}

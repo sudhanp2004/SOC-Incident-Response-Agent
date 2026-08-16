@@ -1,0 +1,102 @@
+{
+  "alerts": [
+    {
+      "alert_id": "ALT-RW-0000",
+      "timestamp": "2024-03-15T08:14:00.000000+0000",
+      "severity": "high",
+      "rule_name": "ET SCAN Potential SSH Scan",
+      "description": "Auto-converted from real log data: ET SCAN Potential SSH Scan",
+      "host_id": "HOST-10-0-2-10",
+      "user_id": null,
+      "mitre_tactic": "discovery",
+      "mitre_technique": null,
+      "indicators": [
+        {
+          "type": "ip",
+          "value": "203.0.113.42",
+          "reputation": "malicious",
+          "context": null
+        },
+        {
+          "type": "ip",
+          "value": "10.0.2.10",
+          "reputation": "unknown",
+          "context": null
+        }
+      ],
+      "raw_log": "{\"timestamp\":\"2024-03-15T08:14:00.000000+0000\",\"event_type\":\"alert\",\"src_ip\":\"203.0.113.42\",\"dest_ip\":\"10.0.2.10\",\"alert\":{\"signature\":\"ET SCAN Potential SSH Scan\",\"category\":\"Attempted Information Leak\"},\"dest_port\":22,\"proto\":\"TCP\"}",
+      "status": "pending",
+      "enrichment": null,
+      "ground_truth": true
+    },
+    {
+      "alert_id": "ALT-RW-0001",
+      "timestamp": "2024-03-15T08:20:00.000000+0000",
+      "severity": "low",
+      "rule_name": "DNS Query Observed",
+      "description": "Auto-converted from real log data: DNS Query Observed",
+      "host_id": "HOST-8-8-8-8",
+      "user_id": null,
+      "mitre_tactic": null,
+      "mitre_technique": null,
+      "indicators": [
+        {
+          "type": "ip",
+          "value": "10.0.1.5",
+          "reputation": "unknown",
+          "context": null
+        },
+        {
+          "type": "ip",
+          "value": "8.8.8.8",
+          "reputation": "unknown",
+          "context": null
+        }
+      ],
+      "raw_log": "{\"timestamp\":\"2024-03-15T08:20:00.000000+0000\",\"event_type\":\"alert\",\"src_ip\":\"10.0.1.5\",\"dest_ip\":\"8.8.8.8\",\"alert\":{\"signature\":\"DNS Query Observed\",\"category\":\"Not Suspicious\"},\"dest_port\":53,\"proto\":\"UDP\"}",
+      "status": "pending",
+      "enrichment": null,
+      "ground_truth": false
+    }
+  ],
+  "hosts": [
+    {
+      "host_id": "HOST-10-0-2-10",
+      "hostname": "host-10-0-2-10",
+      "ip_address": "10.0.2.10",
+      "subnet": "0.0.0.0/0",
+      "os": "unknown",
+      "role": "unknown",
+      "owner": null,
+      "is_critical": false,
+      "is_vip": false,
+      "status": "suspicious",
+      "active_sessions": [],
+      "running_processes": []
+    },
+    {
+      "host_id": "HOST-8-8-8-8",
+      "hostname": "host-8-8-8-8",
+      "ip_address": "8.8.8.8",
+      "subnet": "0.0.0.0/0",
+      "os": "unknown",
+      "role": "unknown",
+      "owner": null,
+      "is_critical": false,
+      "is_vip": false,
+      "status": "clean",
+      "active_sessions": [],
+      "running_processes": []
+    }
+  ],
+  "attack_chain": {
+    "patient_zero_host": "HOST-10-0-2-10",
+    "stages": [
+      "discovery"
+    ],
+    "lateral_movement_targets": [],
+    "crown_jewel_host": "HOST-8-8-8-8",
+    "exfiltration_complete": false,
+    "attacker_dwell_minutes": 45
+  }
+}

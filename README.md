@@ -58,6 +58,27 @@ In short: `observation -> action -> step -> reward -> final grade`.
 | `attack_chain_reconstruction` | Medium | 25 | Correlate alerts across hosts, recover ATT&CK chain context, contain correctly |
 | `constrained_incident_response` | Hard | 40 | Balance security, continuity, and compliance under hard business constraints |
 
+## Real-World Task Data (`real_world_incident`)
+
+The 4th task's alerts are converted from Splunk's public "Boss of the SOC"
+(BOTS v1) dataset rather than hand-written. The raw dataset (~8GB) is not
+included in this repo. To (re)build the episode bank:
+
+1. Download BOTS v1 from Splunk's public dataset registry.
+2. Place `suricata_eve.json`, `cloudtrail.json`, and `dns_stream.json` (one
+   JSON object per line) into `data_pipeline/raw/`.
+3. Run:
+   ```bash
+   python tools/build_real_world_scenarios.py
+   ```
+4. Commit the generated `scenarios/data/real_world/episode_*.json` files —
+   these are small (converted/summarized alerts, not raw logs) and are what
+   the environment actually reads at game-time.
+
+Ground truth (real threat vs. noise) comes from `data_pipeline/known_iocs.json`
+— a small, hand-curated list of indicators sourced from BOTS' own public
+answer key, not from automatic detection.
+
 ## API Endpoints
 
 - `POST /reset`
