@@ -289,4 +289,4 @@ soc-openenv/
 
 ## Contact
 
-ankit.k23@iiits.in
+sudhan.p23@iiits.in
